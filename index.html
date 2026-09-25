@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="en-AU"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Season Trends</title>
+<meta name="description" content="Season Trends: the latest Festive issue and a gallery of past trends, each with its own recipe PDF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Fall in Love';src:url('fonts/fall-in-love.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'Gloock';src:url('fonts/gloock-regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  /* Season Trends brand tokens. Palette approximates the Festive (Issue 04) brochure.
+     Headlines: Gloock. Body: Circe (load via the site's font kit; Mulish is the fallback here). */
+  :root{
+    --st-deep:#231c17;
+    --st-deep-2:#3a2f27;
+    --st-gold:#bfa66c;
+    --st-gold-hi:#cdb782;
+    --st-gold-ink:#7a6534;
+    --st-cream:#fbf7ef;
+    --st-cream-2:#f1e8d6;
+    --ink:#231c17;
+    --ink-2:#5a4e44;
+    --ink-3:#8a7d70;
+    --line:#e3d8c3;
+    --st-green:#3f6750;
+    --st-red:#c91c23;
+    --script:'Fall in Love','Brush Script MT',cursive;
+    --charcoal:#36393b;
+    --white:#ffffff;
+    --display:'Gloock',Georgia,'Times New Roman',serif;
+    --body:'Circe','Mulish','Helvetica Neue',Arial,sans-serif;
+    --gutter:clamp(16px,4vw,48px);
+    --max:1280px;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--st-gold);outline-offset:2px}
+  .season-trends{padding-top:clamp(24px,4vw,48px)}
+  .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+  .display{font-family:var(--display);font-weight:400;letter-spacing:-.005em;line-height:1.05;text-wrap:balance;margin:0}
+  .eyebrow{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--st-gold-ink);margin:0}
+
+  /* ---------- Image placeholders (swap for real photography) ---------- */
+  .ph{position:relative;background:var(--ph-bg,var(--st-cream-2));overflow:hidden;max-width:100%}
+  .ph::before{content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 78% 22%,rgba(255,255,255,.5) 0 18%,transparent 19%),
+      radial-gradient(circle at 24% 72%,rgba(255,255,255,.3) 0 26%,transparent 27%)}
+  .ph span{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);color:var(--ink-2);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px}
+  .ph.t-gold{--ph-bg:#e8d3a0}
+  .ph.t-cream{--ph-bg:var(--st-cream-2)}
+  .ph.t-sand{--ph-bg:#e2d2b8}
+  .ph.t-cocoa{--ph-bg:#c9b5a0}
+  .ph.t-sage{--ph-bg:#d6d8c4}
+
+  /* ---------- Hero (single artwork + overlaid button) ---------- */
+  .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  /* All hero measurements are in artwork units: 2400 x 900 artboard, 1cqw = 24 artwork px */
+  .hero-frame{position:relative;container-type:inline-size;overflow:hidden;background:var(--st-cream)}
+  .hero picture{display:block}
+  .hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/900;object-fit:cover;max-width:100%}
+  .hero-text{position:absolute;inset:0;pointer-events:none}
+  .ht-title{margin:0;font-weight:400}
+  .ht-season{position:absolute;left:3.8%;top:8.6%;font-family:var(--script);color:var(--st-red);font-size:8.9cqw;line-height:1;white-space:nowrap}
+  .ht-trends{position:absolute;left:25.4%;top:7.6%;font-family:var(--display);color:var(--st-gold);font-size:8.8cqw;line-height:1;letter-spacing:-.005em;white-space:nowrap}
+  .ht-row{position:absolute;left:5.75%;top:31.4%;display:flex;align-items:center;gap:.5cqw}
+  .ht-edition{margin:0;white-space:nowrap;font-family:var(--body);font-weight:700;color:var(--st-red);font-size:1.45cqw;line-height:1}
+  .ht-strip{height:2.5cqw;padding:0 .8cqw;margin:0;display:flex;align-items:center;justify-content:center;background:var(--st-green);color:#fff;font-family:var(--body);font-weight:500;font-size:1.47cqw;line-height:1;white-space:nowrap}
+  .ht-baubles{list-style:none;margin:0;padding:0}
+  .bb{position:absolute;width:13%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:.55cqw;text-align:center;color:#fff}
+  .bb-t{font-family:var(--body);font-weight:600;text-transform:uppercase;font-size:1.36cqw;line-height:1.14;letter-spacing:.03em}
+  .bb-d{font-family:var(--body);font-weight:500;font-size:1.2cqw;line-height:1.22;white-space:nowrap}
+  .bb-1{left:62.9%;top:55.6%}
+  .bb-2{left:77.5%;top:38.8%}
+  .bb-3{left:91.7%;top:59.4%}
+  .hero-btn{position:absolute;left:5.75%;bottom:15.33%;background:var(--st-red);color:#fff;text-transform:uppercase;letter-spacing:.06em}
+  .hero-btn:hover{background:#a8161c;transform:translateY(-1px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font:700 15px var(--body);text-decoration:none;padding:15px 24px;cursor:pointer;border:0;transition:transform .15s ease, background .15s ease}
+  .btn-gold{background:var(--st-gold);color:var(--st-deep)}
+  .btn-gold:hover{background:var(--st-gold-hi);transform:translateY(-1px)}
+  .btn small{font-weight:500;opacity:.75;font-size:13px}
+  .card-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;max-width:100%}
+
+  /* ---------- Section heads ---------- */
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .section-head h2{font-size:clamp(30px,3.4vw,40px);color:var(--st-red)}
+  .section-head .meta{font-size:14px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .section-head .sub{margin:6px 0 0;color:var(--ink-2);font-size:16px}
+
+  /* ---------- In this issue ---------- */
+  .issue{padding-block:56px 72px;display:flex;flex-direction:column;gap:28px}
+  .brochures{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+  .brochure{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);overflow:hidden}
+  .brochure .ph{aspect-ratio:4/3}
+  .brochure-body{padding:20px;display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--st-gold)}
+  .brochure h3{margin:0;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;color:var(--st-green)}
+  .brochure h3 .script{font-family:var(--script);font-weight:400;font-size:1.3em;color:var(--st-gold);line-height:1}
+  .brochure p{margin:0;color:var(--charcoal);font-size:17px}
+  .brochure .recipes-label{margin-top:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--st-gold-ink)}
+  .brochure .recipes{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .brochure .recipes li{position:relative;padding-left:16px;font-size:17px;line-height:1.4;color:var(--charcoal)}
+  .brochure .recipes li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;transform:rotate(45deg);background:var(--st-gold)}
+
+  /* ---------- Trends Gallery ---------- */
+  .gallery{background:#f2ede2;border-top:1px solid var(--line)}
+  .gallery .wrap{padding-block:64px 72px;display:flex;flex-direction:column;gap:32px}
+  .masonry{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+  .m-col{display:flex;flex-direction:column;gap:24px;min-width:0}
+  .m-col .tile{margin-bottom:0}
+  .tile{break-inside:avoid;display:flex;flex-direction:column;margin-bottom:24px;background:var(--white);border:1px solid var(--line);overflow:hidden;text-decoration:none;color:inherit;}
+  .tile-media{position:relative;overflow:hidden}
+  .tile-media::after{content:"";position:absolute;inset:0;background:rgba(20,16,12,.22);opacity:0;transition:opacity .2s ease;pointer-events:none}
+  .tile:hover .tile-media::after,.tile:focus-visible .tile-media::after{opacity:1}
+  .tile:hover .tile-cta{background:var(--st-gold-ink)}
+  .tile .ph.tall{aspect-ratio:4/5}
+  .tile .ph.short{aspect-ratio:4/3}
+  .tile-body{padding:18px 20px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+  .tile-text{display:flex;flex-direction:column;gap:4px;width:100%}
+  .tile-issue{white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--st-gold-ink)}
+  .tile h3{margin:0;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.12;color:var(--st-green)}
+  .tile-desc{margin:2px 0 0;font-size:16px;color:var(--charcoal)}
+  .tile-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:800;color:var(--white);background:var(--st-gold);padding:8px 12px;white-space:nowrap;transition:background .2s ease}
+  .tile-img{display:block;width:100%;height:auto;object-fit:cover;max-width:100%}
+  .tile-img.tall{aspect-ratio:4/5}
+  .tile-img.short{aspect-ratio:4/3}
+  .tile-cta svg{width:15px;height:15px}
+
+
+  /* ---------- Trends Gallery: Allied Pinnacle branding (matches Product Catalogue 2026) ---------- */
+  @font-face{font-family:'Sharp Grotesk SB20';src:url('fonts/sharp-grotesk-semibold20.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+  .gallery{--ap-blue:#013c56;--ap-yellow:#ffd602;--ap-blue-pale:#eaf2f5;--ap-ink:#1b2b33;--ap-grey-300:#d8e1e5;--ap-head:'Sharp Grotesk SB20','Space Grotesk',sans-serif;--ap-body:'Figtree',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ap-blue-pale);border-top:0;font-family:var(--ap-body)}
+  .gallery .section-head h2{font-family:var(--ap-head);font-weight:600;letter-spacing:-.01em;color:var(--ap-blue)}
+  .gallery .section-head .sub{font-family:var(--ap-body);color:var(--ap-ink)}
+  .gallery .tile{border-color:var(--ap-grey-300)}
+  .gallery .tile-issue{align-self:flex-start;font-family:var(--ap-body);font-weight:500;font-size:12px;letter-spacing:0;text-transform:uppercase;color:var(--ap-blue);background:var(--ap-yellow);padding:4px 10px;margin-bottom:6px}
+  .gallery .tile h3{font-family:var(--ap-head);font-weight:600;letter-spacing:-.01em;color:var(--ap-blue)}
+  .gallery .tile-desc{font-family:var(--ap-body);color:var(--ap-ink)}
+  .gallery .tile-cta{font-family:var(--ap-head);font-weight:600;color:var(--ap-blue);background:var(--ap-yellow);padding:10px 16px;transition:background .18s ease,color .18s ease}
+  .gallery .tile:hover .tile-cta{background:var(--ap-yellow);color:var(--ap-blue)}
+  .gallery .tile .tile-cta:hover,.gallery .tile .tile-cta:focus-visible{background:var(--ap-blue);color:#fff}
+  .gallery .tile-media::after{background:rgba(1,60,86,.25)}
+  .gallery .tile:focus-visible{outline:3px solid var(--ap-yellow);outline-offset:2px}
+
+  @font-face{font-family:'Sharp Grotesk SB25';src:url('fonts/sharp-grotesk-semibold25.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+  .gallery .section-head h2{font-family:'Sharp Grotesk SB20','Space Grotesk',sans-serif;font-size:28px}
+  .gallery .tile h3{font-family:var(--ap-body);font-weight:600;letter-spacing:0}
+  .gallery .section-head .sub,.gallery .tile-desc{color:var(--ap-blue)}
+  .gallery .tile-cta{font-family:var(--ap-body);font-weight:600}
+  .gallery .section-head h2{display:inline-block;text-transform:uppercase;letter-spacing:0;line-height:1;padding:0 .45em 0 .55em;margin-left:-.1em;background:linear-gradient(to bottom,transparent 0 44%,var(--ap-yellow) 44% 96%,transparent 96%);background-repeat:no-repeat;margin-bottom:10px}
+  .gallery .section-head .sub{font-size:18px}
+  /* Carousel */
+  .gallery .carousel{position:relative;overflow:hidden;max-width:100%}
+  .gallery .carousel.short{aspect-ratio:4/3}
+  .gallery .carousel.tall{aspect-ratio:4/5}
+  .gallery .car-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .gallery .slide{position:relative;flex:0 0 100%;height:100%}
+  .gallery .slide img,.gallery .slide .ph{display:block;width:100%;height:100%;object-fit:cover}
+  .gallery .slide .ph span{left:auto;right:14px;top:14px;bottom:auto}
+  .gallery .slide::before{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;z-index:1;background:linear-gradient(to top,rgba(10,20,26,.62) 0%,rgba(10,20,26,.28) 55%,rgba(10,20,26,0) 100%);pointer-events:none}
+  .gallery .slide-name{position:absolute;left:18px;bottom:16px;z-index:2;max-width:calc(100% - 70px);font-family:var(--ap-body);font-weight:600;font-size:16px;line-height:1.25;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .gallery .car-btn{position:absolute;top:50%;z-index:3;width:44px;height:44px;margin-top:-22px;display:grid;place-items:center;border:0;padding:0;background:none;color:#fff;cursor:pointer;filter:drop-shadow(0 1px 3px rgba(0,0,0,.55));transition:transform .15s ease}
+  .gallery .car-btn svg{width:26px;height:26px}
+  .gallery .car-btn[hidden]{display:none}
+  .gallery .car-btn:hover{transform:scale(1.15)}
+  .gallery .car-prev{left:6px}
+  .gallery .car-next{right:6px}
+  .gallery .car-btn:focus-visible,.gallery .tile-cta:focus-visible{outline:3px solid var(--ap-yellow);outline-offset:2px}
+  .gallery .tile-cta{text-decoration:none}
+  .gallery .carousel.tile-media::after{display:none}
+  @media (prefers-reduced-motion:reduce){.gallery .car-track{transition:none}}
+  .issue .section-head{align-items:center}
+  .issue-btn{background:var(--st-red);color:#fff;text-transform:uppercase;letter-spacing:.06em}
+  .issue-btn:hover{background:#a8161c;transform:translateY(-1px)}
+
+  /* ---------- MOCK: Allied Pinnacle site header (for client preview only — the live site supplies its own) ---------- */
+  .mock-site-header{width:100%;background:#fff;border-top:1px solid #eadfe3;border-bottom:1px solid #eef1f3;font-family:'Sharp Grotesk SB20','Space Grotesk',sans-serif}
+  .mock-site-header .msh-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:92px;padding:0 clamp(16px,4vw,76px)}
+  .msh-logo img{display:block;height:74px;width:auto;max-width:100%}
+  .msh-nav{display:flex;align-items:center;gap:clamp(12px,1.2vw,22px);padding-top:14px}
+  .msh-nav a{color:#013c56;text-decoration:none;font-weight:600;font-size:19px;letter-spacing:.01em;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+  .msh-nav a svg{width:14px;height:14px;margin-top:3px}
+  .msh-nav a:hover{color:#0c5c7d}
+  .msh-phone{background:#013c56;color:#fff!important;border-radius:999px;padding:12px 24px;margin-left:4px}
+  .msh-phone:hover{background:#0c5c7d}
+  .msh-search{margin-left:clamp(12px,2vw,40px)}
+  .msh-nav .msh-search svg{width:26px;height:26px;margin:0}
+  .msh-menu{display:none;background:none;border:0;color:#013c56;cursor:pointer;padding:6px}
+  .msh-menu svg{width:30px;height:30px}
+  @media (max-width:1350px){.msh-nav a{font-size:16px}.msh-logo img{height:60px}}
+  @media (max-width:1100px){.msh-nav{display:none}.msh-menu{display:block}.mock-site-header .msh-in{min-height:76px}.msh-logo img{height:52px}}
+
+  .mock-site-footer{width:100%;background:#00354b;margin-top:0}
+  .mock-site-footer img{display:block;width:100%;max-width:1920px;height:auto;margin:0 auto}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .masonry{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:700px){
+    .hero-frame{overflow:visible;display:flex;flex-direction:column;gap:16px;background:none}
+    .hero-text{bottom:auto;aspect-ratio:2400/900}
+    .hero-btn{position:static;justify-content:center}
+  }
+  @media (max-width:560px){
+    .masonry{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+  }
+</style>
+</head><body>
+
+
+<!-- MOCK HEADER: for client preview only. Remove when integrating — the live Allied Pinnacle site provides this. -->
+<header class="mock-site-header" aria-label="Allied Pinnacle site header (mock)">
+  <div class="msh-in">
+    <a class="msh-logo" href="#" aria-label="Allied Pinnacle home"><img src="images/ap-logo.png" alt="Allied Pinnacle" width="620" height="154"></a>
+    <nav class="msh-nav" aria-label="Main"><a href="#">Products<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">People &amp; Careers<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Sustainability<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">About<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Media<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Shop<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#">Contact</a><a class="msh-phone" href="#">1300 650 855</a><a class="msh-search" href="#" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m8.8 15.2-5.3 5.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a></nav>
+    <button class="msh-menu" type="button" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+<!-- END MOCK HEADER -->
+
+<main class="season-trends">
+  <div class="wrap">
+    <!-- Latest issue masthead: one designed artwork (desktop 2400x900, mobile 1200x1500) with the download button overlaid bottom-left -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-frame">
+        <picture>
+          <img class="hero-art" src="images/hero-desktop.jpg" width="2400" height="900" alt="Festive bakes including gingerbread house, mince tarts, white Christmas slice, stollen and panettone, with three gold baubles: Traditional Christmas, classics that make Christmas magical; Global Celebrations, a world of festive inspiration; Festive Showstoppers, eye-catching sweet and savoury treats.">
+        </picture>
+        <div class="hero-text">
+          <h1 class="ht-title" id="hero-title"><span class="ht-season">season</span><span class="ht-trends">TRENDS</span></h1>
+          <div class="ht-row">
+            <p class="ht-strip">Your seasonal menu inspiration with trending flavours and recipes</p>
+            <p class="ht-edition">Edition 4</p>
+          </div>
+          <ul class="ht-baubles" aria-label="Themes in this issue">
+            <li class="bb bb-1"><span class="bb-t">Traditional<br>Christmas</span><span class="bb-d">Classics that make<br>Christmas magical</span></li>
+            <li class="bb bb-2"><span class="bb-t">Global<br>Celebrations</span><span class="bb-d">A world of festive<br>inspiration</span></li>
+            <li class="bb bb-3"><span class="bb-t">Festive<br>Showstoppers</span><span class="bb-d">Eye-catching sweet and<br>savoury treats</span></li>
+          </ul>
+        </div>
+        <a class="btn hero-btn" href="#" data-pdf="season-trends-issue-04-festive.pdf">Download full issue <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- In this issue -->
+    <section class="issue" aria-labelledby="issue-title">
+      <div class="section-head">
+        <h2 class="display" id="issue-title">In this issue</h2>
+        <a class="btn issue-btn" href="#" data-pdf="season-trends-issue-04-festive.pdf">Download full issue <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="brochures" id="brochures"></div>
+    </section>
+  </div>
+
+  <!-- Trends Gallery -->
+  <section class="gallery" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="display" id="gallery-title">Trends Gallery</h2>
+          <p class="sub">Pick a trend to download its recipes.</p>
+        </div>
+      </div>
+      <div class="masonry" id="masonry"></div>
+    </div>
+  </section>
+</main>
+
+<!-- MOCK FOOTER: for client preview only. Remove when integrating — the live Allied Pinnacle site provides this. -->
+<footer class="mock-site-footer" aria-label="Allied Pinnacle site footer (mock)">
+  <img src="images/mock-footer.jpg" alt="Allied Pinnacle site footer with product and about links, social icons, brand logos and the Reach Out contact form" width="1920" height="1089" loading="lazy">
+</footer>
+<!-- END MOCK FOOTER -->
+
+
+
+<script>
+  // ---- Content: edit here. PDF paths are placeholders for the CMS / DAM links. ----
+  const festive = [
+    { theme: 'Traditional Christmas', d: 'The classics customers come back for, every single year.', recipes: ['Christmas Cake – Dark','Traditional Christmas Pudding','Fruit Mince Tarts','Gingerbread House'], img: 'images/traditional-christmas.jpg', alt: 'Christmas pudding, fruit cake, mince tarts and a gingerbread house on an outdoor table' },
+    { theme: 'Global Celebrations', d: 'Festive flavours from the tables Australians actually gather around.', recipes: ['Christmas Stollen','Swedish Cardamom Buns','Franzbrötchen Cinnamon Scrolls','Lunar New Year Pineapple Tarts'], img: 'images/global-celebrations.jpg', alt: 'Stollen, cardamom knots, key lime tarts and princess cakes on a timber table' },
+    { theme: 'Festive Showstoppers', d: 'Bakery-case showstoppers, built to be filmed, shared and queued for.', recipes: ['Red Velvet Cheesecake Swirl Slab','Croissant Fairy Bread Trees','Festive Cake with Pistachios','NYB Bagel Crostini Bites'], img: 'images/festive-showstoppers.jpg', alt: 'Pistachio fruit cake, red velvet cheesecake slab, lamingtons and chocolate shortbread stars' }
+  ];
+
+  const issues = {
+    winter: { name: 'Winter Trends', no: 'Issue 03', date: 'Jun 2026' },
+    autumn: { name: 'Autumn Trends', no: 'Issue 02', date: 'Mar 2026' },
+    summer: { name: 'Summer Trends', no: 'Issue 01', date: 'Dec 2025' }
+  };
+
+  // size: 'tall' (4:5) or 'short' (4:3) gives the mixed-size gallery rhythm
+  const trends = [
+    { t: 'Crowd Favourites',     d: 'Hand-held heroes perfect for game day',  issue: 'winter', size: 'short', tint: 't-sand', img: 'images/crowd-favourites.jpg', alt: 'Individual pies with piped potato tops, one cut open to show a savoury mince filling', recipes: [{ name: "Korean Beef & Miso Mash Pie", img: 'images/winter/korean-beef-miso-mash-pie.jpg', alt: "Pies with piped mash tops, one cut open to show a Korean beef filling" }, { name: "Cheese Burger Pie", img: 'images/winter/cheese-burger-pie.jpg', alt: "Pie cut open to show beef, melted cheese, pickles and sauce" }, { name: "Danish Brunch Tray with Blueberry Drizzle", img: 'images/winter/danish-brunch-tray.jpg', alt: "Tray of almond Danishes with blueberries and icing drizzle" }] },
+    { t: 'Pinsa & Pizza',        d: 'A great pizza is always an easy sell',  issue: 'winter', size: 'short', tint: 't-gold', img: 'images/pinsa-and-pizza.jpg', alt: 'Fig, prosciutto and ricotta pinsa beside a pepperoni pan pizza', recipes: [{ name: "Pinsa Roast Tomato, Cheese & Basil Oil", img: 'images/winter/pinsa-roast-tomato.jpg', alt: "Pinsa topped with cherry tomatoes, mozzarella, basil and balsamic" }, { name: "Pinsa Bianca – Potato, Rosemary and Truffle Oil", img: 'images/winter/pinsa-bianca-potato.jpg', alt: "Pinsa bianca layered with thin potato slices and rosemary" }, { name: "Deep Pan Pepperoni & Chilli Pizza", img: 'images/winter/deep-pan-pepperoni-pizza.jpg', alt: "Two deep pan pepperoni pizzas in cast-iron pans, one slice lifted" }] },
+    { t: 'Classic Comforts',     d: 'Comforting dishes for cooler weather occasions',   issue: 'winter', size: 'short', tint: 't-cream', img: 'images/classic-comforts.jpg', alt: 'Chocolate cookies topped with toasted marshmallows and biscuit crumb', recipes: [{ name: "Brown Butter Spiced Apple Cake", img: 'images/winter/brown-butter-spiced-apple-cake.jpg', alt: "Layered apple cake with caramel drizzle and dried apple slices" }, { name: "Chocolate Self Saucing Pudding Cups", img: 'images/winter/chocolate-self-saucing-pudding-cups.jpg', alt: "Chocolate puddings in brown pots topped with cream and mint" }, { name: "Sticky Date & Toffee Sauce Loaf Cake", img: 'images/winter/sticky-date-toffee-loaf-cake.jpg', alt: "Loaf cake covered in glossy toffee sauce" }] },
+    { t: 'Retro Stars',          d: 'Take it back to the future for a nostalgia hit',      issue: 'autumn', size: 'tall',  tint: 't-sage', img: 'images/retro-stars.jpg', alt: 'Coconut and raspberry jam cupcake with a matching coconut jam slice', recipes: [{ name: "Raspberry Coconut Muffins", img: 'images/autumn/raspberry-coconut-muffins.jpg', alt: "Raspberry jam and pink coconut muffin with a matching slice" }, { name: "Fairy Bread Marshmallow Slice", img: 'images/autumn/fairy-bread-marshmallow-slice.jpg', alt: "Pink marshmallow slice topped with hundreds and thousands" }, { name: "Lemon Meringue Berliners", img: 'images/autumn/lemon-meringue-berliners.jpg', alt: "Berliner doughnuts topped with toasted meringue, lemon curd oozing out" }] },
+    { t: 'Chocolate Indulgence', d: 'Irresistible treats',                   issue: 'autumn', size: 'short', tint: 't-cream', img: 'images/chocolate-indulgence.jpg', alt: 'Layered chocolate caramel slices on a steel bench', recipes: [{ name: "S'mores Chocolate Donuts", img: 'images/autumn/smores-chocolate-donuts.jpg', alt: "Chocolate-glazed donuts topped with toasted mini marshmallows" }, { name: "Wagonwheel Muffins or Slice", img: 'images/autumn/wagonwheel-muffins-or-slice.jpg', alt: "Chocolate muffins and a brownie topped with marshmallow, jam and chocolate drizzle" }, { name: "Miso Caramel Dark Choc Cupcake", img: 'images/autumn/miso-caramel-dark-choc-cupcake.jpg', alt: "Dark chocolate cupcakes with caramel frosting beside salted caramels" }] },
+    { t: 'Make it Mini',         d: 'Small bites, big on flavour',             issue: 'autumn', size: 'tall',  tint: 't-sage', img: 'images/make-it-mini.jpg', alt: 'Stack of pancakes with butter and syrup', recipes: [{ name: "Salted Caramel Chocolate Tarts", img: 'images/autumn/salted-caramel-chocolate-tarts.jpg', alt: "Mini chocolate tarts topped with a dome of salted caramel" }, { name: "Mini Vanilla Slice Jam Donuts", img: 'images/autumn/mini-vanilla-slice-jam-donuts.jpg', alt: "Chocolate-topped donuts cut open to show custard and jam" }, { name: "Mini Mocha Whoopie Pies", img: 'images/autumn/mini-mocha-whoopie-pies.jpg', alt: "Chocolate whoopie pies with cream filling dusted with icing sugar" }] },
+    { t: "Berry Valentine's",     d: "Love up your Valentine's treats with cheeky raspberry recipes",  issue: 'summer', size: 'short', tint: 't-sage', img: 'images/berry-valentines.jpg', alt: 'Red velvet cupcakes topped with whipped frosting and fresh raspberries', recipes: [{ name: "Red Velvet Raspberry Lamingtons", img: 'images/summer/red-velvet-raspberry-lamingtons.jpg', alt: "Red velvet lamington filled with cream and raspberries, topped with raspberries and mint" }, { name: "Raspberry Ripe Slice", img: 'images/summer/raspberry-ripe-slice.jpg', alt: "Red velvet slice with a thick cream layer topped with fresh raspberries" }, { name: "Raspberry Red Velvet Brownies", img: 'images/summer/raspberry-red-velvet-brownies.jpg', alt: "Chocolate brownies with raspberry and white choc chunks, topped with pink swirled frosting and a raspberry" }] },
+    { t: 'Dubai Choc Easter',    d: 'Hop into the latest trend with mouth-watering choccy creations',             issue: 'summer', size: 'short', tint: 't-sand', img: 'images/dubai-choc-easter.jpg', alt: 'Croissant filled with piped pistachio cream, topped with chocolate and crushed pistachios', recipes: [{ name: "Dubai Choc-Croissant", img: 'images/summer/dubai-choc-croissant.jpg', alt: "Croissant filled with piped pistachio cream, topped with chocolate and crushed pistachios" }, { name: "Dubai Chocolate Muffins", img: 'images/summer/dubai-chocolate-muffins.jpg', alt: "Chocolate muffins topped with cream cheese frosting and crushed pistachio" }, { name: "Dubai Chocolate Mudcake", img: 'images/summer/dubai-chocolate-mudcake.jpg', alt: "Chocolate mudcake topped with ganache, pistachio drizzle and crushed pistachios" }] },
+    { t: 'Summer Lemon',         d: 'Add some zing to your summer with these trending desserts',          issue: 'summer', size: 'tall', ratio: 1.12,  tint: 't-gold', img: 'images/summer-lemon.jpg', alt: 'Toasted bagels with cream cheese and lemon curd beside fresh lemon wedges', recipes: [{ name: "Raspberry Lemon Mini Slab Cakes", img: 'images/summer/raspberry-lemon-mini-slab-cakes.jpg', alt: "Lemon slab cake fingers piped with raspberry frosting, fresh raspberries alongside" }, { name: "Lemon Basque Cheesecake", img: 'images/summer/lemon-basque-cheesecake.jpg', alt: "Burnt Basque cheesecake with lemon slices and mint, one slice cut" }, { name: "Lemon Cream Cheese Topping", img: 'images/summer/lemon-cream-cheese-topping.jpg', alt: "Swirled lemon cream cheese topping with lemon zest and slices" }] },
+    { t: 'Coffee Moments',       d: 'Elevating coffee pairings and infusing desserts with rich coffee flavour',             issue: 'summer', size: 'tall', ratio: 1, tint: 't-cocoa', img: 'images/coffee-moments.jpg', alt: 'Chocolate whoopie pies with cream filling beside a coffee mug', recipes: [{ name: "Tiramisu Layered Cake", img: 'images/summer/tiramisu-layered-cake.jpg', alt: "Coffee buttercream cake dusted with cocoa and ringed with piped kisses" }, { name: "Mocha Mudcake", img: 'images/summer/mocha-mudcake.jpg', alt: "Chocolate mudcake with piped coffee buttercream beside a cup of coffee" }, { name: "Tiramisu and White Chocolate Cheesecake", img: 'images/summer/tiramisu-white-choc-cheesecake.jpg', alt: "Layered coffee and white chocolate cheesecake topped with coffee beans and chocolate curls" }] }
+  ];
+
+  const slug = s => s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const arrow = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9m0 0 4-4m-4 4L4 7M3 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  // In this issue
+  document.getElementById('brochures').innerHTML = festive.map(b => `
+    <article class="brochure">
+      <img class="card-img" src="${b.img}" alt="${esc(b.alt)}" width="1000" height="750" loading="lazy">
+      <div class="brochure-body">
+        <h3>${esc(b.theme.split(' ')[0])} <span class="script">${esc(b.theme.split(' ').slice(1).join(' '))}</span></h3>
+        <p>${esc(b.d)}</p>
+        <p class="recipes-label">Recipes include</p>
+        <ul class="recipes">${b.recipes.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
+      </div>
+    </article>`).join('');
+
+  // Trends Gallery
+  // Each tile: a 3-recipe carousel. Slide 1 uses the trend photo; slides 2-3 are placeholders until recipe photos arrive.
+  const tileHTML = trends.map((g, ti) => {
+    const iss = issues[g.issue];
+    const slides = g.recipes.map((r, i) => {
+      const src = r.img || (i === 0 && g.img), alt = r.img ? r.alt : g.alt;
+      const media = src
+        ? `<img src="${src}" alt="${esc(alt)}" width="900" height="675" loading="lazy">`
+        : `<div class="ph ${g.tint}" aria-hidden="true"><span>Recipe image</span></div>`;
+      return `<div class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${g.recipes.length}: ${esc(r.name)}">${media}<span class="slide-name">${esc(r.name)}</span></div>`;
+    }).join('');
+    return `
+    <article class="tile">
+      <div class="tile-media carousel ${g.size}"${g.ratio ? ` style="aspect-ratio:1/${g.ratio}"` : ''} data-index="0" aria-roledescription="carousel" aria-label="${esc(g.t)} recipes">
+        <div class="car-track">${slides}</div>
+        <button type="button" class="car-btn car-prev" aria-label="Previous recipe"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="car-btn car-next" aria-label="Next recipe"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="tile-body">
+        <div class="tile-text">
+          <h3>${esc(g.t)}</h3>
+          <p class="tile-desc">${esc(g.d)}</p>
+        </div>
+        <a class="tile-cta" href="#" data-pdf="season-trends-${g.issue}-${slug(g.t)}-recipes.pdf" aria-label="Download ${esc(g.t)} recipes PDF">Download PDF ${arrow}</a>
+      </div>
+    </article>`;
+  });
+
+  // Balanced gallery: shuffle the trends, then drop each tile into the shortest column.
+  const masonry = document.getElementById('masonry');
+  const order = trends.map((g, i) => i);
+  const shuffle = arr => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; };
+  shuffle(order);
+  const tileEls = tileHTML.map(h => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstElementChild; });
+  const colCount = () => innerWidth <= 560 ? 1 : innerWidth <= 900 ? 2 : 3;
+  let cols = 0;
+  const layoutGallery = () => {
+    const n = colCount(); if (n === cols) return; cols = n;
+    masonry.innerHTML = '';
+    const colEls = Array.from({ length: n }, () => { const c = document.createElement('div'); c.className = 'm-col'; masonry.appendChild(c); return c; });
+    // measure each tile at the real column width
+    const probe = colEls[0];
+    const H = tileEls.map(el => { probe.appendChild(el); return el.offsetHeight + 24; });
+    // try a batch of random orders and keep the most even one (still random each visit)
+    const pack = ord => { const h = new Array(n).fill(0), put = ord.map(i => { const k = h.indexOf(Math.min(...h)); h[k] += H[i]; return k; }); return { put, spread: Math.max(...h) - Math.min(...h) }; };
+    let best = null, bestOrd = order;
+    for (let t = 0; t < 300; t++) {
+      const ord = t === 0 ? order : shuffle(order.slice());
+      const r = pack(ord);
+      if (!best || r.spread < best.spread) { best = r; bestOrd = ord; }
+    }
+    bestOrd.forEach((i, idx) => colEls[best.put[idx]].appendChild(tileEls[i]));
+  };
+  layoutGallery();
+  addEventListener('resize', layoutGallery);
+
+  // Carousel behaviour: arrows, dots, swipe and arrow keys
+  document.querySelectorAll('.carousel').forEach(car => {
+    const track = car.querySelector('.car-track');
+    const real = [...track.querySelectorAll('.slide')];
+    const n = real.length;
+    const clone = real[0].cloneNode(true); clone.setAttribute('aria-hidden', 'true'); clone.querySelector('img')?.removeAttribute('loading');
+    track.appendChild(clone); // slide n = copy of slide 0, so the last slide can keep moving right into the first
+    let pos = 0, busy = false;
+    const move = (p, animate = true) => {
+      track.style.transition = animate ? '' : 'none';
+      track.style.transform = `translateX(${-100 * p}%)`;
+      if (!animate) void track.offsetWidth; // apply the jump before the next animation
+      pos = p; car.dataset.index = p % n;
+    };
+    track.addEventListener('transitionend', () => { busy = false; if (pos === n) move(0, false); });
+    const step = dir => {
+      if (busy) return;
+      if (dir < 0 && pos === 0) move(n, false); // jump to the copy, then slide left to the last recipe
+      busy = true;
+      move(pos + dir);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { busy = false; if (pos === n) move(0, false); }
+    };
+    car.querySelector('.car-prev').addEventListener('click', () => step(-1));
+    car.querySelector('.car-next').addEventListener('click', () => step(1));
+    car.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
+    let x0 = null;
+    car.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    car.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); x0 = null; });
+  });
+
+  // Placeholder links: stop jumping to top until real PDF URLs are wired in
+  document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+
+</script>
+</body></html>
