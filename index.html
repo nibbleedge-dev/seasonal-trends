@@ -36,7 +36,7 @@
   body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit}
   a:focus-visible,button:focus-visible{outline:3px solid var(--st-gold);outline-offset:2px}
-  .season-trends{padding-top:clamp(24px,4vw,48px)}
+  .season-trends{padding-top:0}
   .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
   .display{font-family:var(--display);font-weight:400;letter-spacing:-.005em;line-height:1.05;text-wrap:balance;margin:0}
   .eyebrow{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--st-gold-ink);margin:0}
@@ -128,7 +128,7 @@
 
   /* ---------- Trends Gallery: Allied Pinnacle branding (matches Product Catalogue 2026) ---------- */
   @font-face{font-family:'Sharp Grotesk SB20';src:url('fonts/sharp-grotesk-semibold20.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
-  .gallery{--ap-blue:#013c56;--ap-yellow:#ffd602;--ap-blue-pale:#eaf2f5;--ap-ink:#1b2b33;--ap-grey-300:#d8e1e5;--ap-head:'Sharp Grotesk SB20','Space Grotesk',sans-serif;--ap-body:'Figtree',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ap-blue-pale);border-top:0;font-family:var(--ap-body)}
+  .gallery{--ap-blue:#013c56;--ap-yellow:#ffd602;--ap-blue-pale:#eaf2f5;--ap-ink:#1b2b33;--ap-grey-300:#d8e1e5;--ap-head:'Sharp Grotesk SB20','Space Grotesk',sans-serif;--ap-body:'Figtree',-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;border-top:0;font-family:var(--ap-body)}
   .gallery .section-head h2{font-family:var(--ap-head);font-weight:600;letter-spacing:-.01em;color:var(--ap-blue)}
   .gallery .section-head .sub{font-family:var(--ap-body);color:var(--ap-ink)}
   .gallery .tile{border-color:var(--ap-grey-300)}
@@ -173,7 +173,8 @@
   .issue-btn:hover{background:#a8161c;transform:translateY(-1px)}
 
   /* ---------- MOCK: Allied Pinnacle site header (for client preview only — the live site supplies its own) ---------- */
-  .mock-site-header{width:100%;background:#fff;border-top:1px solid #eadfe3;border-bottom:1px solid #eef1f3;font-family:'Sharp Grotesk SB20','Space Grotesk',sans-serif}
+  :root{--msh-h:94px}
+  .mock-site-header{position:sticky;top:0;z-index:40;width:100%;background:#fff;border-top:1px solid #eadfe3;border-bottom:1px solid #eef1f3;font-family:'Sharp Grotesk SB20','Space Grotesk',sans-serif}
   .mock-site-header .msh-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:92px;padding:0 clamp(16px,4vw,76px)}
   .msh-logo img{display:block;height:74px;width:auto;max-width:100%}
   .msh-nav{display:flex;align-items:center;gap:clamp(12px,1.2vw,22px);padding-top:14px}
@@ -187,10 +188,41 @@
   .msh-menu{display:none;background:none;border:0;color:#013c56;cursor:pointer;padding:6px}
   .msh-menu svg{width:30px;height:30px}
   @media (max-width:1350px){.msh-nav a{font-size:16px}.msh-logo img{height:60px}}
-  @media (max-width:1100px){.msh-nav{display:none}.msh-menu{display:block}.mock-site-header .msh-in{min-height:76px}.msh-logo img{height:52px}}
+  @media (max-width:1100px){:root{--msh-h:78px}.msh-nav{display:none}.msh-menu{display:block}.mock-site-header .msh-in{min-height:76px}.msh-logo img{height:52px}}
 
   .mock-site-footer{width:100%;background:#00354b;margin-top:0}
   .mock-site-footer img{display:block;width:100%;max-width:1920px;height:auto;margin:0 auto}
+
+  /* ---------- Previous Season Trends (AP branding, matches Trends Gallery) ---------- */
+  .previous{--ap-blue:#013c56;--ap-yellow:#ffd602;--ap-grey-300:#d8e1e5;background:#eaf2f5;font-family:'Figtree',-apple-system,BlinkMacSystemFont,sans-serif}
+  .previous .wrap{padding-block:64px 80px;display:flex;flex-direction:column;gap:32px}
+  .previous .section-head h2{font-family:'Sharp Grotesk SB20','Space Grotesk',sans-serif;font-weight:600;font-size:28px;color:var(--ap-blue);display:inline-block;text-transform:uppercase;letter-spacing:0;line-height:1;padding:0 .45em 0 .55em;margin-left:-.1em;background:linear-gradient(to bottom,transparent 0 44%,var(--ap-yellow) 44% 96%,transparent 96%);background-repeat:no-repeat;margin-bottom:10px}
+  .previous .section-head .sub{font-size:18px;color:var(--ap-blue);margin:6px 0 0}
+  .prev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .prev-card{display:flex;flex-direction:column;border:1px solid var(--ap-grey-300);background:#fff}
+  .prev-card img{display:block;width:100%;height:auto;aspect-ratio:739/521;object-fit:cover;max-width:100%}
+  .prev-body{padding:18px 20px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex:1}
+  .prev-body h3{margin:0;font-family:'Figtree',sans-serif;font-weight:600;font-size:24px;line-height:1.15;color:var(--ap-blue)}
+  .prev-body h3 span{font-weight:500;font-size:16px;color:#4f6f80}
+  .prev-body p{margin:0 0 6px;font-size:16px;line-height:1.5;color:var(--ap-blue);flex:1}
+  .prev-cta{display:inline-flex;align-items:center;gap:7px;font-family:'Figtree',sans-serif;font-size:15px;font-weight:600;color:var(--ap-blue);background:var(--ap-yellow);padding:10px 16px;text-decoration:none;transition:background .18s ease,color .18s ease}
+  .prev-cta svg{width:15px;height:15px}
+  .prev-cta:hover,.prev-cta:focus-visible{background:var(--ap-blue);color:#fff}
+  .prev-cta:focus-visible{outline:3px solid var(--ap-yellow);outline-offset:2px}
+  @media (max-width:900px){.prev-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:560px){.prev-grid{grid-template-columns:1fr}}
+
+  /* ---------- Section nav ---------- */
+  html{scroll-behavior:smooth}
+  .st-subnav{position:sticky;top:var(--msh-h,0px);z-index:30;background:#fff;border-bottom:1px solid #d8e1e5;margin-bottom:clamp(20px,3vw,32px)}
+  .st-subnav .wrap{display:flex;gap:clamp(20px,4vw,44px);overflow-x:auto;scrollbar-width:none}
+  .st-subnav .wrap::-webkit-scrollbar{display:none}
+  .st-subnav a{flex-shrink:0;padding:16px 0 13px;font-family:'Figtree',-apple-system,sans-serif;font-weight:600;font-size:16px;color:#013c56;text-decoration:none;border-bottom:3px solid transparent;transition:border-color .18s ease,color .18s ease}
+  .st-subnav a:hover{border-bottom-color:#d8e1e5}
+  .st-subnav a[aria-current="true"]{border-bottom-color:#ffd602}
+  .st-subnav a:focus-visible{outline:3px solid #ffd602;outline-offset:2px}
+  #current-issue,#trends-gallery,#previous-issues{scroll-margin-top:calc(var(--msh-h,0px) + 56px)}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
@@ -222,9 +254,18 @@
 <!-- END MOCK HEADER -->
 
 <main class="season-trends">
+<!-- Season Trends page nav: jumps to each section -->
+<nav class="st-subnav" aria-label="Season Trends sections">
+  <div class="wrap">
+    <a href="#current-issue" aria-current="true">Current issue</a>
+    <a href="#previous-issues">Previous issues</a>
+    <a href="#trends-gallery">Trends gallery</a>
+  </div>
+</nav>
+
   <div class="wrap">
     <!-- Latest issue masthead: one designed artwork (desktop 2400x900, mobile 1200x1500) with the download button overlaid bottom-left -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" id="current-issue" aria-labelledby="hero-title">
       <div class="hero-frame">
         <picture>
           <img class="hero-art" src="images/hero-desktop.jpg" width="2400" height="900" alt="Festive bakes including gingerbread house, mince tarts, white Christmas slice, stollen and panettone, with three gold baubles: Traditional Christmas, classics that make Christmas magical; Global Celebrations, a world of festive inspiration; Festive Showstoppers, eye-catching sweet and savoury treats.">
@@ -256,7 +297,45 @@
   </div>
 
   <!-- Trends Gallery -->
-  <section class="gallery" aria-labelledby="gallery-title">
+  <!-- Previous issues -->
+  <section class="previous" id="previous-issues" aria-labelledby="previous-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="display" id="previous-title">Previous Season Trends</h2>
+          <p class="sub">Download the full issue from past seasons.</p>
+        </div>
+      </div>
+      <div class="prev-grid">
+        <article class="prev-card">
+          <img src="images/covers/edition-3-winter.jpg" alt="Season Trends Edition 3 (Winter Trends) cover" width="739" height="521" loading="lazy">
+          <div class="prev-body">
+            <h3>Winter Trends <span>· Edition 3</span></h3>
+            <p>Hand-held heroes, pinsa &amp; pizza favourites and classic comfort bakes for the cooler months.</p>
+            <a class="prev-cta" href="https://alliedpinnacle.com/wp-content/uploads/2026/07/AP-DS-053-SeasonTrends_WinterBrochure_05_DIGI.pdf" target="_blank" rel="noopener" aria-label="Download Season Trends Edition 3, Winter Trends (PDF)">Download PDF <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9m0 0 4-4m-4 4L4 7M3 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+        <article class="prev-card">
+          <img src="images/covers/edition-2-autumn.jpg" alt="Season Trends Edition 2 (Autumn Trends) cover" width="739" height="521" loading="lazy">
+          <div class="prev-body">
+            <h3>Autumn Trends <span>· Edition 2</span></h3>
+            <p>Nostalgic retro bakes, chocolate indulgence and mini treats to bring seasonal excitement to your menu.</p>
+            <a class="prev-cta" href="https://alliedpinnacle.com/wp-content/uploads/2026/05/AP-DS-040-SeasonTrends_AutumnBrochure_11-FA.pdf" target="_blank" rel="noopener" aria-label="Download Season Trends Edition 2, Autumn Trends (PDF)">Download PDF <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9m0 0 4-4m-4 4L4 7M3 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+        <article class="prev-card">
+          <img src="images/covers/edition-1-summer.jpg" alt="Season Trends Edition 1 (Summer Trends) cover" width="739" height="521" loading="lazy">
+          <div class="prev-body">
+            <h3>Summer Trends <span>· Edition 1</span></h3>
+            <p>Berry-bright bakes, choc indulgence and zesty lemon treats to heat up your summer menu.</p>
+            <a class="prev-cta" href="https://alliedpinnacle.com/wp-content/uploads/2026/01/season-trends.pdf" target="_blank" rel="noopener" aria-label="Download Season Trends Edition 1, Summer Trends (PDF)">Download PDF <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9m0 0 4-4m-4 4L4 7M3 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="trends-gallery" aria-labelledby="gallery-title">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -267,6 +346,8 @@
       <div class="masonry" id="masonry"></div>
     </div>
   </section>
+
+
 </main>
 
 <!-- MOCK FOOTER: for client preview only. Remove when integrating — the live Allied Pinnacle site provides this. -->
@@ -410,5 +491,18 @@
   // Placeholder links: stop jumping to top until real PDF URLs are wired in
   document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
 
+
+  // Section nav: underline the section currently in view
+  const navLinks = [...document.querySelectorAll('.st-subnav a')];
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+  const setActive = () => {
+    const y = document.querySelector('.st-subnav').getBoundingClientRect().bottom + 40;
+    let cur = 0;
+    sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top - y <= 0) cur = i; });
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) cur = sections.length - 1;
+    navLinks.forEach((a, i) => i === cur ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+  };
+  addEventListener('scroll', setActive, { passive: true });
+  setActive();
 </script>
 </body></html>
